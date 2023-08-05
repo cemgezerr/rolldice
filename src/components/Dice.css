@@ -1,34 +1,29 @@
-.dice{
+
+.dice {
     font-size: 10em;
     padding: 0.25em;
     color: #00ADB5;
+    transform-origin: center;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
 }
 
-
-.shaking{
-    animation-name: wobble ;
-    animation-duration: 1s ;
+.shaking {
+    animation-name: wobble;
 }
-@keyframes wobble{
-    from {
-        transform: translate3d(0,0,0);
+
+@keyframes wobble {
+    0%, 100% {
+        transform: rotateX(0deg) rotateY(0deg);
     }
-    15%{
-        transform: translate3d(-25%,0,0) rotate3d(0,0,1,-5deg);
+    25% {
+        transform: rotateX(360deg) rotateY(0deg);
     }
-    30%{
-        transform: translate3d(20%,0,0) rotate3d(0,0,1,3deg);
+    50% {
+        transform: rotateX(360deg) rotateY(360deg);
     }
-    45%{
-        transform: translate3d(-15%,0,0) rotate3d(0,0,1,-3deg);
-    }
-    60%{
-        transform: translate3d(10%,0,0) rotate3d(0,0,1,2deg);
-    }
-    75%{
-        transform: translate3d(-5%,0,0) rotate3d(0,0,1,-1deg);
-    }
-    to{
-        transform: translate3d(0,0,0);
+    75% {
+        transform: rotateX(0deg) rotateY(360deg);
     }
 }
